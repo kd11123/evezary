@@ -1,0 +1,742 @@
+/* 웹폰트 */
+@font-face {
+    font-family: 'Binggrae-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/Binggrae-Bold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+* {margin: 0; padding: 0;}
+li {list-style: none;}
+a  {text-decoration: none; display: block; color: #111; font-family: 'S-CoreDream-6Black';}
+body {overflow-x: hidden; font-family: 'S-CoreDream-6Black';}
+img {width: 100%;}
+.center {width: 1320px; margin: 0 auto; height: 100vh; overflow: hidden;}
+header, section, footer {
+    width: 100%;
+    float: left;
+    box-sizing: border-box;
+}
+header {
+    height: 80px;
+    background-color: #212121;
+    padding-top: 13px;
+    position: fixed;
+    z-index: 100;
+}
+header .logo {
+    float: left;
+    width: 200px;
+    margin-left: 50px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+header nav {
+    float: left;
+    margin-left: 50px;
+    margin-top: 10px;
+}
+header nav ul li {
+    float: left;
+    position: relative;
+    /* 자식객체 a의 자식객체 after가 위치 잡을때 기준은 li가 됌 */
+}
+header nav ul li a {
+    color: #fff;
+    font-size: 16px;
+    padding: 6px 30px 23px;
+    font-weight: bold;
+}
+header nav ul li a:hover {
+    color: #ff6464;
+}
+/* 메인메뉴에 마우스 오버했을 때 밑줄 애니메이션 */
+header nav ul li a:after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background-color: #ff6464;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    display: block;
+    text-align: center;
+    transition: all 0.15s ease-in;  /* 가속운동 */
+}
+header nav ul li a:hover:after {
+    width: 100%;
+    left: 0;
+}
+header .header_icon {
+    float: right;
+    margin-top: 15px;
+    margin-right: 50px;
+}
+header .header_icon ul li {
+    float: left;
+    margin: 0 12px;
+}
+header .header_icon ul li i {
+    width: 18px;
+    float: left;
+    margin-right: 7px;
+}
+header .header_icon ul li p {
+    float: left;
+    font-size: 13px;
+    color: #fff;
+    margin-top: 5px;
+}
+/* section */
+section {
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 100px 0;
+}
+section.s1 {
+    padding: 0;
+}
+section h1 {
+    font-family: 'S-CoreDream-6Bold';
+    font-size: 40px;
+    color: #666;
+    text-align: center;
+    opacity: 0;
+    margin-top: 20px;
+    transition: all 0.5s;
+    transition-delay: 0.2s;
+}
+section h1.active {
+    opacity: 1;
+    margin-top: 0;
+}
+section p.small_title {
+    font-size: 20px;
+    text-align: center;
+    margin: 40px 0 10px;
+    opacity: 0;
+    transition: all 0.5s;
+}
+section p.small_title.active {
+    margin-top: 20px;
+    opacity: 1;
+}
+/* visual */
+
+section .visual {
+    width: 100%;
+    height: 100vh;
+    /* vh : 장치의 높이를 인식하는 단위 */
+    /* 100vh : visual영역의 높이는 장치의 높이와 같음 */
+}
+section .visual > div {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    /* visual_bg visual_des 겹침 */
+    top: 0;
+    left: 0;
+}
+
+section .visual .visual_bg > div {
+    /* background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover; */
+    width: 30.20%;
+    height: 100vh;
+    /* float: left; */
+    position: absolute;
+    top: 0;
+
+}
+section .visual .visual_bg .v1 {
+    left:0;
+}
+section .visual .visual_bg .v2 {
+    left: 22.39%;
+}
+section .visual .visual_bg .v3 {
+    left: 47.39%;
+}
+section .visual .visual_bg .v4 {
+    right:0;
+}
+section .visual .visual_bg div div {
+    transform: matrix(1,0,0,1,0,0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+section .visual .visual_bg .v1 .v1_img {
+    background-image: url(../img/main1.jpg);
+}
+section .visual .visual_bg .v2 .v2_img {
+    background-image: url(../img/main2.jpg);
+}
+section .visual .visual_bg .v3 .v3_img {
+    background-image: url(../img/main3.jpg);
+}
+section .visual .visual_bg .v4 .v4_img {
+    background-image: url(../img/main4.jpg);
+}
+section .visual .visual_des > div {
+    /* box-sizing: border-box;
+    padding: 130px 50px;
+    float: left; */
+    width: 25%;
+    height: 100vw;
+    position: absolute;
+}
+section .visual .visual_des .v1 {
+    left: 0;
+}
+section .visual .visual_des .v2 {
+    left: 25vw;
+}
+section .visual .visual_des .v3 {
+    left: 50vw;
+}
+section .visual .visual_des .v4 {
+    right: 0;
+}
+/* 마우스 오버시 반투명 배경 */
+section .visual .visual_bg div .tran_bg {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    top: 0;
+    left: 0;
+    display: none;
+}
+section .visual .visual_des div .des_txt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+section .visual .visual_des div h1 {
+    color: #fff;
+    font-size: 30px;
+    opacity: 1;
+    margin-top: 8vw;
+    margin-left: 7vw;
+}
+/* section .visual .visual_bg div i{
+    width: 30;
+    float: left;
+}  아이콘*/
+section .visual .visual_des div h1 p {
+    float: left;
+    text-shadow: 0 0 5px #333;
+    margin-top: 5px;
+}
+section .visual .visual_des div > p {
+    width: 100%;
+    color: #fff;
+    float: left;
+    padding-left: 4vw;
+    margin-top: 10px;
+    line-height: 20px;
+    opacity: 0;
+    transition: all 0.5s;
+    font-weight: bold;
+    text-shadow: 0 0 5px #333;
+}
+/* 마지막 영역 .v4의 p태그에 padding 설정 */
+ section .visual .visual_des .v4 .des_txt > p {
+     padding-left: 4vw;
+ }
+
+/* 메인 비주얼의 화살표 */
+section .visual .visual_des div:hover > p {
+    opacity: 1;
+}
+/* mySwiper1 슬라이드 sli */
+section.s2 {
+    /* background-color: #111; */
+}
+section.s2 .swiper {
+    width: 75%;
+    overflow: visible;   /* overflow:hidden을 해제 */
+    padding-top: 90px; /* 작은 제목과의 여백 */
+    margin-left: 25%;   /* 왼쪽여백 25% */
+    opacity: 0;
+    transition: all 0.5s;
+    transition-delay:0.4s;
+}
+section.s2 .swiper.active {
+    padding-top: 70px;
+    opacity: 1;
+}
+section.s2 .swiper .swiper-slide {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    transition: all 0.5s;
+}
+section.s2 .swiper .swiper-slide-active {
+    transform: scale(1.3);  /* 원래크기의 1.3 배 */
+    z-index: 100;           /* 맨 앞으로 배치 */
+}
+section.s2 .swiper .s1 {
+    background-image: url(../img/slide1.jpg);
+}
+section.s2 .swiper .s2 {
+    background-image: url(../img/slide2.jpg);
+}
+section.s2 .swiper .s3 {
+    background-image: url(../img/slide3.jpg);
+}
+section.s2 .swiper .s4 {
+    background-image: url(../img/slide4.jpg);
+}
+section.s2 .swiper .swiper-button-next {
+    text-indent:-99999px;   /* 들여쓰기 */
+    width: 70px;
+    top: 460px;
+    right: 600px;
+}
+section.s2 .swiper .swiper-button-prev {
+    text-indent:-99999px;   /* 들여쓰기 */
+    width: 70px;
+    top: 460px;
+    left: -60px;
+}
+/* 비활성화 된 이미지에서 제목과 설명이 작은 글자임 */
+section.s2 .swiper .swiper-slide .slide_des {
+    background-color: rgba(0,0, 0, 0);  /* 투명 */
+    width: 100%;
+    height: 40%;
+    color: #fff;
+    position: absolute;
+    bottom: 0;  /* 아래위치 */
+    padding-top: 30px;
+    box-sizing: border-box;
+}
+section.s2 .swiper .swiper-slide .slide_des h1 {
+    font-size: 20px;
+    font-weight: normal;
+    color: #fff;
+    display: none;
+}
+section.s2 .swiper .swiper-slide-active .slide_des h1 {
+    display: block;
+}
+section.s2 .swiper .swiper-slide .slide_des a {
+    width: 100px;
+    margin: 20px auto;
+    border: 1px solid #999;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    font-size: 14px;
+    display: none;
+}
+
+/* 이미지가 활성화active 되면 a버튼 나옴 */
+section.s2 .swiper .swiper-slide-active .slide_des {
+    background-color: rgba(0,0,0,0.6);
+}
+/* 이미지가 활성화active 되면 view버튼 나옴 */
+section.s2 .swiper .swiper-slide-active .slide_des a {
+    display: block;
+}
+/* s3 탭메뉴 */
+section.s3 .tab {
+    width: 100%;
+    margin-top: 20px;
+    opacity: 0;
+    transition: all 0.5s;
+    transition-delay: 0.4s ;
+}
+section.s3 .tab.active {
+    opacity: 1;
+    margin-top: 0;
+}
+section.s3 .tab > div {
+    width: 100%;
+    float: left;
+}
+section.s3 .tab .tab_title ul li {
+    float: left;
+    width: 330px;
+}
+section.s3 .tab .tab_title ul li a {
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #ff6464;
+    padding: 20px;
+    text-align: center;
+    color: #666;
+}
+section.s3 .tab .tab_title ul li a.active {
+    color: #ff6464;
+    border: 1px solid #ff6464;
+    border-bottom: solid transparent;
+    font-weight: bold;
+}
+section.s3 .tab .tab_con {
+    height:600px;
+    position: relative;  /* 자식객체 div 겹칠때 부모기준으로 배치 */
+}
+section.s3 .tab .tab_con > div {
+    position: absolute;
+    padding: 40px 0;
+    box-sizing: border-box;
+}
+section.s3 .tab .tab_con > div ul li {
+    float: left;
+    width: 430px;
+    margin-right: 15px;
+}
+section.s3 .tab .tab_con > div ul li:last-child{
+    margin-right: 0;
+}
+section.s3 .tab .tab_con div ul li .tab_img {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+/* text-transform: uppercase  소문자를 대문자로 변환 */
+section.s3 .tab .tab_con div ul li .tab_txt {
+    padding: 20px 10px;
+    color: #666;
+    font-size: 18px;
+    font-weight: bold;
+
+}
+section.s3 .tab .tab_con div ul li p {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+section.s3 {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 960px;
+    background-image: url(../img/tab_back.png);
+}
+
+/* view more btn */
+section.s3 .view_btn {
+    width: 100%;
+    float: left;
+    opacity: 0;
+    margin-top: 20px;
+    transition: all 0.5s;
+    transition-delay: 0.6s;
+}
+/* 스크롤 애니메이션 */
+section.s3 .view_btn.active {
+    opacity: 1;
+    margin-top: 0;    
+}
+section.s3 .view_btn a {
+    width:300px;
+    height:50px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    line-height: 40px;
+    text-align: center;
+    color: #ff6464;
+    border: 1px solid #ff6464;
+    font-weight: bold;
+}
+section.s3 .view_btn a p {
+    margin-left: 50px;
+    margin-top: 5px;
+    float: left;
+}
+section.s3 .view_btn a span {
+    margin-top: 5px;
+    margin-right: 50px;
+    width: 50px;
+    display: block;
+    float: right;
+}
+/* s4 (갤러리, gallery) */
+section.s4 .center {
+    position: relative;   /* .s4_right 영역의 위치 잡을 때 기준 */
+}
+section.s4 .s4_left{
+    float: left;
+    width: 650px;
+    position: relative;    /* z-index 값 적용 */
+    z-index: 5;
+    margin-top: 150px;
+}
+section.s4 h1 {
+    text-align: left;
+    margin: 10px 0 0 40px;
+    margin-top: 120px;
+    opacity: 0;
+    transition: all 0.5s;
+}
+/* 화면 스크롤 애니메이션 */
+section.s4 h1.active {
+    opacity: 1;
+    margin-top: 100px;
+}
+section.s4 p {
+    text-align: left;
+    margin-left: 40px;
+    line-height: 30px;
+    margin-top: 40px;
+    opacity: 0;
+    transition: all 0.5s;
+    transition-delay: all 0.2s;
+}
+section.s4 p.active {
+    margin-top: 20px;
+    opacity: 1;
+}
+section.s4 .gallery {
+    width: 580px;
+    margin-top: 150px;
+    margin-left: 40px;
+    opacity: 0;
+    transition: all 0.5s;
+    transition-delay:0.4s;
+}
+/* 화면 스크롤 애니메이션 */
+section.s4 .gallery.active {
+    margin-top: 130px;
+    opacity: 1;
+}
+section.s4 .s4_right {
+    position: absolute;    /* .s4_left영역과 겹침 */
+    z-index: 1;
+    top: 120px;
+    right: 0;
+    width: 900px;
+    opacity: 0;
+    transition:all 0.5s;
+    transition-delay:0.6s;
+}
+section.s4 .s4_right.active {
+    opacity: 1;
+    top:100px;
+}
+section.s4 .swiper-slide {
+    height: 150px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+section.s4 .s4_right .swiper .swiper-slide {
+    height: 540px;
+}
+/* 슬라이드 버튼 */
+section.s4 .swiper-button-next2 {
+    width: 50px;
+    position: absolute;
+    right: -10px;
+    bottom: 50px;
+    z-index: 20;
+    opacity: 0.7;
+    cursor: pointer;
+}
+section.s4 .swiper-button-prev2 {
+    width: 50px;
+    position: absolute;
+    left: 0;
+    bottom: 50px;
+    z-index: 20;
+    opacity: 0.7;
+    cursor: pointer;
+}
+section.s4 .swiper .g1 {
+    background-image: url(../img/g1.png);
+}
+section.s4 .swiper .g2 {
+    background-image: url(../img/g2.png);
+}
+section.s4 .swiper .g3 {
+    background-image: url(../img/g1.png);
+}
+section.s5 {
+    background-image: url(../img/back1.png);
+    height: 910px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+section.s5 h1 {
+    margin-bottom: 100px;
+    opacity: 0;
+    transition:all 0.5s;
+}
+section.s5 h1.active {
+    opacity: 1;
+}
+
+
+section.s5 .coll {
+    opacity: 0;
+    margin-top: 20px;
+    transition: all 0.5s;
+    transition-delay: 0.4s;
+}
+/* 화면 스크롤 애니메이션 */
+section.s5 .coll.active {
+    opacity: 1;
+    margin-top: 0;
+}
+section.s5 .coll p {
+    font-size: 20px;
+    color: #666;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 30px;
+}
+section.s5 .coll ul li {
+    float: left;
+    width: 315px;
+    margin-right: 20px;
+}
+section.s5 .coll ul li:last-child{
+    margin-right: 0;
+}
+footer {
+    margin-top: 100px;
+    background-color: #212121;
+    height: 360px;
+}
+footer .center {
+    height: auto;
+}
+footer .top_footer {
+    height: 50px;
+    border-top: 1px solid#999;
+    border-bottom: 1px solid #999;
+}
+footer .top_footer .user ul li {
+    float: left;
+    border-left: 1px solid #666;
+}
+footer .top_footer .user ul li:last-child {
+    border-right: 1px solid #666;
+}
+footer .top_footer .user ul li a {
+    color: #ccc;
+    padding: 15px 30px;
+}
+/* 개인정보 처리방침 글자만 색 변경 */
+footer .top_footer .user ul li:nth-child(3) a {
+    color: #ff6464;
+}
+/* sns  */
+footer .top_footer .sns {
+    float: right;
+}
+footer .top_footer .sns ul li {
+    float: left;
+    border-left: 1px solid #666;
+    padding: 11px 20px
+}
+footer .top_footer .sns ul li:last-child {
+    border-right: 1px solid #666;
+}
+footer .top_footer .sns ul li a {
+    width: 24px;
+}
+footer .bottom_footer {
+    padding-top: 40px;
+}
+footer .bottom_footer .center {
+    overflow: visible ;
+}
+footer .bottom_footer .addr {
+    float: left;
+}
+footer .bottom_footer address {
+    color: #999;
+    font-weight: normal;
+    line-height: 24px;
+    font-style:normal;
+}
+footer .bottom_footer p {
+    color: #999;
+    margin-top: 20px;
+}
+/* 패밀리 사이트 family */
+footer .bottom_footer .family {
+    position: relative;
+    width: 200px;
+    height: 250px;
+    float: right;
+    margin-top: -150px;
+    overflow: hidden;
+}
+footer .bottom_footer .family .family_title {
+    border: 1px solid #666;
+    position: absolute;
+    bottom: 0;
+    width: 99%;
+    z-index: 10;
+    background-color: #212121;
+}
+footer .bottom_footer .family .family_title a {
+    color: #ddd;
+    padding: 15px 25px;
+}
+footer .bottom_footer .family_title a span {
+    width: 10px;
+    height: 10px;
+    background-image: url(../img/famliy.png);
+    display: block;
+    float: right;
+    margin-top: 5px;
+}
+footer .bottom_footer .family .family_list {
+    position: absolute;   /* family_title과 겹쳐짐 */
+    top: 200px;
+    width:99%;
+    z-index: 5;
+}
+footer .bottom_footer .family .family_list ul li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom: none;
+}
+footer .bottom_footer .family .family_list ul li a {
+    padding: 15px 20px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+.top {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    background-color: #666;
+    color: #ddd;
+    bottom: 10px;
+    right: 10px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 18px;
+    cursor: pointer;
+}
